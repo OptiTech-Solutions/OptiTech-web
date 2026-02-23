@@ -40,8 +40,8 @@ const ProjectCard = ({ title, description, tags, status, id }) => (
         
         {/* External Links - re-enabled pointer events for these specifically */}
         <div className="flex space-x-3 pointer-events-auto z-10 relative">
-          <a href="#" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
-          <a href="#" className="text-slate-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
+          <a href={githubLink} className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
+          <a href={externalLink} className="text-slate-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
         </div>
       </div>
       
@@ -73,14 +73,18 @@ const Projects = () => {
       title: 'BelDepot System',
       description: 'A comprehensive booking and inventory management system developed for a beverage distribution company. Features real-time stock tracking, automated reorder alerts, and secure user authentication.',
       tags: ['Python', 'FastApi', 'React Native', 'Docker'],
-      status: 'In Dev'
+      status: 'In Dev',
+      githubLink:"https://github.com/OptiTech-Solutions/bel-depot-system",
+      externalLink:"https://www.optitechsolutions.dev",
     },
     {
       id: 'care-connect', // Added ID for routing
       title: 'Care Connect',
       description: 'A simple platform for managers to track worker rating get customer feedback and improve customer performance.',
       tags: ['React', 'Tailwind', 'Node.js', 'PostgreSQL'],
-      status: 'In Dev'
+      status: 'In Dev',
+      githubLink:"",
+      externalLink:"https://care-connect-flame.vercel.app/"
     }   
   ];
 
@@ -106,11 +110,13 @@ const Projects = () => {
         </div>
         
         {/* 'View More' Button */}
+        <a href="https://github.com/OptiTech-Solutions">
         <div className="mt-16 text-center">
           <button className="px-8 py-3 border border-slate-500 text-slate-300 rounded-lg hover:bg-slate-800 hover:text-white transition-all duration-300 font-medium hover:border-slate-300">
             View Github Profile
           </button>
         </div>
+        </a>
 
       </div>
     </section>
