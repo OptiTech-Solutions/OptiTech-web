@@ -1,8 +1,9 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import careconnect from "../assets/careconnect.png"; // Ensure this path is correct based on your project structure 
 
-const ProjectCard = ({ title, description, tags, status, id, githubLink, externalLink }) => (
+const ProjectCard = ({ title, description, tags, status, id, githubLink, externalLink, image }) => (
   // Updated card background to be slightly transparent to blend with gradient
   <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10 group flex flex-col h-full relative cursor-pointer">
     
@@ -11,15 +12,24 @@ const ProjectCard = ({ title, description, tags, status, id, githubLink, externa
       <span className="sr-only">View {title}</span>
     </Link>
 
-    {/* Project Preview / Placeholder */}
-    <div className="h-48 bg-slate-900/80 relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
-      
-      {/* Abstract decorative pattern */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:scale-105 transition-transform duration-500">
-        <div className="w-24 h-24 border-2 border-cyan-400 rounded-full animate-pulse"></div>
-        <div className="absolute w-32 h-32 border border-purple-500 rounded-full"></div>
-      </div>
+    {/* Project Preview / Image */}
+    <div className="h-48 bg-slate-900/80 relative overflow-hidden group -index">
+      {image ? (
+        <img 
+          src={careconnect} 
+          alt={title} 
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      ) : (
+        <>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+        {/* Abstract decorative pattern fallback */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:scale-105 transition-transform duration-500">
+            <div className="w-24 h-24 border-2 border-cyan-400 rounded-full animate-pulse"></div>
+            <div className="absolute w-32 h-32 border border-purple-500 rounded-full"></div>
+        </div>
+        </>
+      )}
       
       {/* Status Badge */}
       <div className="absolute top-4 right-4 z-20">
@@ -30,6 +40,8 @@ const ProjectCard = ({ title, description, tags, status, id, githubLink, externa
         </span>
       </div>
     </div>
+
+
 
     <div className="p-6 flex flex-col flex-grow pointer-events-none"> {/* Ensure clicks pass through container but content stays visible */}
       <div className="flex justify-between items-start mb-4">
@@ -71,11 +83,12 @@ const Projects = () => {
     {
       id: 'beldepot', // Added ID for routing
       title: 'BelDepot System',
-      description: 'A comprehensive booking and inventory management system developed for a beverage distribution company. Features real-time stock tracking, automated reorder alerts, and secure user authentication.',
+      description: 'A comprehensive booking and inventory management system developed for a beverage distribution company. Features real-time stock tracking, automated reorder alerts, and secure user a..uthentication.',
       tags: ['Python', 'FastApi', 'React Native', 'Docker'],
       status: 'In Dev',
       githubLink:"https://github.com/OptiTech-Solutions/bel-depot-system",
       externalLink:"https://www.optitechsolutions.dev",
+     
     },
     {
       id: 'care-connect', // Added ID for routing
@@ -84,7 +97,8 @@ const Projects = () => {
       tags: ['React', 'Tailwind', 'Node.js', 'PostgreSQL'],
       status: 'In Dev',
       githubLink:"#",
-      externalLink:"https://care-connect-flame.vercel.app/"
+      externalLink:"https://care-connect-flame.vercel.app/",
+      image: "./assets/careconnect"
     }   
   ];
 
