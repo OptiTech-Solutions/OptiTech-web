@@ -18,14 +18,11 @@ const Footer = () => {
               Building high-integrity software for daily optimization. A student collective focused on privacy-first productivity.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a href="https://github.com/OptiTech-Solutions" className="text-slate-400 hover:text-white transition-colors">
                 <Github size={20} />
               </a>
               <a href="#" className="text-slate-400 hover:text-cyan-400 transition-colors">
                 <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors">
-                <Twitter size={20} />
               </a>
             </div>
           </div>
@@ -58,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center text-slate-400 text-sm">
                 <Mail size={16} className="mr-3 text-cyan-400" />
-                <a href="mailto:hello@optitech.dev" className="hover:text-white transition-colors">hello@optitech.dev</a>
+                <a href="mailto:elik.amuzu@gmail.com" className="hover:text-white transition-colors">elik.amuzu@gmail.com</a>
               </li>
               <li className="text-slate-500 text-xs mt-4">
                 Available for freelance projects and enterprise consultations.
