@@ -2,7 +2,7 @@ import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ title, description, tags, status, id }) => (
+const ProjectCard = ({ title, description, tags, status, id, githubLink, externalLink }) => (
   // Updated card background to be slightly transparent to blend with gradient
   <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10 group flex flex-col h-full relative cursor-pointer">
     
@@ -83,7 +83,7 @@ const Projects = () => {
       description: 'A simple platform for managers to track worker rating get customer feedback and improve customer performance.',
       tags: ['React', 'Tailwind', 'Node.js', 'PostgreSQL'],
       status: 'In Dev',
-      githubLink:"",
+      githubLink:"#",
       externalLink:"https://care-connect-flame.vercel.app/"
     }   
   ];
