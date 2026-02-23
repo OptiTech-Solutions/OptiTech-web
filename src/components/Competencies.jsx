@@ -20,6 +20,12 @@ const CompetencyCard = ({ icon: Icon, title, items, colorClass }) => (
 const Competencies = () => {
   const competenciesData = [
     {
+      icon: Code,
+      title: 'Development',
+      colorClass: 'text-brand-pink',
+      items: ['React & TypeScript', 'React Native', 'Node.js & Python', 'CI/CD Pipelines'],
+    },
+    {
       icon: Shield,
       title: 'Security',
       colorClass: 'text-brand-cyan',
@@ -30,12 +36,6 @@ const Competencies = () => {
       title: 'Optimization',
       colorClass: 'text-brand-purple',
       items: ['Performance Profiling', 'Algorithmic Efficiency', 'Latency Reduction', 'Core Web Vitals Mastery'],
-    },
-    {
-      icon: Code,
-      title: 'Development',
-      colorClass: 'text-brand-pink',
-      items: ['React & TypeScript', 'React Native', 'Node.js & Python', 'CI/CD Pipelines'],
     },
   ];
 

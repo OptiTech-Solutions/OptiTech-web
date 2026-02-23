@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
@@ -26,15 +27,20 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="group relative px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center">
-            Start a Project
+          <Link to="/contact">
+            <button  className="group relative px-8 py-4 bg-white text-slate-900 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center">
+                Start a Project
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+            </button>
+          </Link>
           
-          <button className="group px-8 py-4 border border-slate-500 text-slate-300 rounded-full font-semibold text-lg hover:bg-slate-800 hover:text-white hover:border-white transition-all duration-300 flex items-center">
-            <Mail className="mr-2 w-5 h-5" />
-            Contact Us
-          </button>
+          <Link to="/contact">
+            <button className="group px-8 py-4 border border-slate-500 text-slate-300 rounded-full font-semibold text-lg hover:bg-slate-800 hover:text-white hover:border-white transition-all duration-300 flex items-center">
+              <Mail className="mr-2 w-5 h-5" />
+              Contact Us
+            </button>
+          </Link>
+          
         </div>
 
         <p className="mt-8 text-sm text-white/70">
