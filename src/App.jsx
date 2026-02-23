@@ -1,11 +1,15 @@
-import { useState } from 'react'
 import './App.css'
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
+import Competencies from './components/Competencies'
 
 function App() {
   
   return (
     <>
-      <div className='p-5 bg-black'>Hello</div>
+      <Navbar/>
+      <Hero />
+      <Competencies />
     </>
   )
 }
