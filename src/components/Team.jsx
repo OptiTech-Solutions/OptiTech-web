@@ -1,7 +1,7 @@
 import React from 'react';
 import { Linkedin, Github, Users } from 'lucide-react';
 
-const TeamMember = ({ name, role, tags, image }) => (
+const TeamMember = ({ name, role, tags, image, linkedin, github }) => (
   <div className="group relative">
     <div className="aspect-[3/4] overflow-hidden rounded-2xl bg-slate-800">
       {/* Placeholder Image / Gradient since we don't have real photos yet */}
@@ -21,12 +21,15 @@ const TeamMember = ({ name, role, tags, image }) => (
           ))}
         </div>
 
-        {/* Social Links */}
-        <div className="flex space-x-3 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-cyan-500 hover:text-white text-slate-400 transition-colors">
+        {/* Social Links 
+            - Mobile: opacity-100 translate-y-0 (Visible)
+            - Desktop (md): opacity-0 translate-y-4 (Hidden until hover)
+        */}
+        <div className="flex space-x-3 opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300">
+          <a href={linkedin} className="p-2 rounded-full bg-slate-800 hover:bg-cyan-500 hover:text-white text-slate-400 transition-colors">
             <Linkedin size={16} />
           </a>
-          <a href="#" className="p-2 rounded-full bg-slate-800 hover:bg-purple-500 hover:text-white text-slate-400 transition-colors">
+          <a href={github} className="p-2 rounded-full bg-slate-800 hover:bg-purple-500 hover:text-white text-slate-400 transition-colors">
             <Github size={16} />
           </a>
         </div>
@@ -40,26 +43,34 @@ const Team = () => {
     {
       name: "Barabara Sackey",
       role: "Data and Security Engineer",
-      tags: ["Data Privacy", "Security"],
-      image: "from-slate-700 to-slate-600" // Placeholder gradient
+      tags: ["Data Privacy","Development", "Security"],
+      image: "from-slate-700 to-slate-600", // Placeholder gradient
+      linkedin: "https://www.linkedin.com/in/barbara-sackey-536316377/",
+      github: "https://github.com/Kiekie-28"
     },
     {
       name: "Grant Boamah",
       role: "Frontend Engineer",
       tags: ["React","React Native", "Figma"],
-      image: "from-slate-700 to-blue-900" 
+      image: "from-slate-700 to-blue-900",
+      linkedin: "https://www.linkedin.com/in/emmanuel-grant-boamah-19ab8626a/",
+      github: "https://github.com/GranTech-hub"
     },
     {
       name: "Jeffrey Eshun",  
       role: "Backend Engineer",
       tags: ["Python", "Docker"],
-      image: "from-slate-700 to-purple-900"
+      image: "from-slate-700 to-purple-900",
+      linkedin: "https://www.linkedin.com/in/jeffrey-eshun-38b523347/",
+      github: "https://github.com/1of1jey"
     },
     {
       name: "Prince Amuzu",
       role: "Fullstack Engineer",
       tags: ["MERN Stack", "Team Leadership"],
-      image: "from-slate-700 to-pink-900"
+      image: "from-slate-700 to-pink-900",
+      linkedin: "https://www.linkedin.com/in/prince-elikplim-amuzu/",
+      github: "https://github.com/eliamuzu"
     }
   ];
 
