@@ -40,7 +40,7 @@ const Team = () => {
     {
       name: "Barabara Sackey",
       role: "Data and Security Engineer",
-      tags: ["Data Privacy", "Security"],
+      tags: ["Data Privacy","Development", "Security"],
       image: "from-slate-700 to-slate-600" // Placeholder gradient
     },
     {
