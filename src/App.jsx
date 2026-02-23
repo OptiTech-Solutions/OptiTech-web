@@ -4,10 +4,12 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Contact from './pages/Contact'; 
 import Footer from './components/Footer';
+import ScrollToAnchor from './components/ScrollToAnchor';
 
 function App() {
   return (
     <Router>
+      <ScrollToAnchor /> 
       <div className="App bg-dark-primary flex flex-col min-h-screen">
         <Navbar />
         {/* ScrollToTop component would go here to reset scroll on route change */}
