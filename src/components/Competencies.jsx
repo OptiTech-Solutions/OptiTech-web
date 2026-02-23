@@ -43,8 +43,8 @@ const Competencies = () => {
     <section id="competencies" className="bg-dark-primary py-10 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-base font-semibold text-brand-cyan tracking-wider uppercase">Our Expertise</h2>
-          <p className="mt-2 text-4xl sm:text-5xl font-bold tracking-tight text-text-primary">Core Competencies</p>
+          <h2 className="text-base font-semibold text-brand-cyan tracking-wider uppercase">Core Services</h2>
+          <p className="mt-2 text-4xl sm:text-5xl font-bold tracking-tight text-text-primary">Our Expertise</p>
           <p className="mt-6 max-w-2xl mx-auto text-lg text-text-secondary">
             We combine enterprise-grade security with performance-obsessed development to build software that is both safe and fast.
           </p>
