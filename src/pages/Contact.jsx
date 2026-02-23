@@ -58,8 +58,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-lg">Email Us</h3>  
-                  <a href="mailto:team@optitech.solutions" className="text-slate-400 hover:text-cyan-400 transition-colors block mt-1">
-                    team@optitech.solutions
+                  <a href="mailto:elik.amuzu@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors block mt-1">
+                    elik.amuzu@gmail.com
                   </a>
                   <p className="text-slate-600 text-xs mt-1">We typically reply within 24 hours </p>
                 </div>
