@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact'; 
 import Footer from './components/Footer';
 import ScrollToAnchor from './components/ScrollToAnchor';
+import ProjectCaseStudy from './pages/ProjectCaseStudy'; // Import the case study component
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/project-scope/:id" element={<ProjectCaseStudy />} /> {/* Dynamic route for case studies */}
         </Routes>
         <Footer />
       </div>

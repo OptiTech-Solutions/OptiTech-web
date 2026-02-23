@@ -72,10 +72,6 @@ const Footer = () => {
           <p className="text-slate-500 text-sm mb-4 md:mb-0">
             &copy; {currentYear} OptiTech Solutions. All rights reserved.
           </p>
-          <div className="flex items-center text-slate-500 text-sm">
-            <span>Made with</span>
-            <Heart size={14} className="mx-1 text-red-500 fill-current" />
-          </div>
         </div>
       </div>
     </footer>

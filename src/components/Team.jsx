@@ -38,27 +38,27 @@ const TeamMember = ({ name, role, tags, image }) => (
 const Team = () => {
   const members = [
     {
-      name: "Alex Rivera",
-      role: "Lead Security Architect",
-      tags: ["Cryptography", "Node.js"],
+      name: "Barabara Sackey",
+      role: "Data and Security Engineer",
+      tags: ["Data Privacy", "Security"],
       image: "from-slate-700 to-slate-600" // Placeholder gradient
     },
     {
-      name: "Sarah Chen",
-      role: "Frontend Performance Lead",
-      tags: ["React", "WebGL"],
+      name: "Grant Boamah",
+      role: "Frontend Engineer",
+      tags: ["React","React Native", "Figma"],
       image: "from-slate-700 to-blue-900" 
     },
     {
-      name: "Jordan Smith",
-      role: "Full Stack Developer",
+      name: "Jeffrey Eshun",  
+      role: "Backend Engineer",
       tags: ["Python", "Docker"],
       image: "from-slate-700 to-purple-900"
     },
     {
-      name: "Casey Taylor",
-      role: "UI/UX Designer",
-      tags: ["Figma", "Accessibility"],
+      name: "Prince Amuzu",
+      role: "Fullstack Engineer",
+      tags: ["MERN Stack", "Team Leadership"],
       image: "from-slate-700 to-pink-900"
     }
   ];

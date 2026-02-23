@@ -1,9 +1,16 @@
 import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ title, description, tags, status }) => (
+const ProjectCard = ({ title, description, tags, status, id }) => (
   // Updated card background to be slightly transparent to blend with gradient
-  <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10 group flex flex-col h-full">
+  <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10 group flex flex-col h-full relative cursor-pointer">
+    
+    {/* The main card link - using absolute positioning to cover the whole card */}
+    <Link to={`/project-scope/${id}`} className="absolute inset-0 z-0">
+      <span className="sr-only">View {title}</span>
+    </Link>
+
     {/* Project Preview / Placeholder */}
     <div className="h-48 bg-slate-900/80 relative overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
@@ -24,10 +31,15 @@ const ProjectCard = ({ title, description, tags, status }) => (
       </div>
     </div>
 
-    <div className="p-6 flex flex-col flex-grow">
+    <div className="p-6 flex flex-col flex-grow pointer-events-none"> {/* Ensure clicks pass through container but content stays visible */}
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
-        <div className="flex space-x-3">
+        {/* Title */}
+        <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+            {title}
+        </h3>
+        
+        {/* External Links - re-enabled pointer events for these specifically */}
+        <div className="flex space-x-3 pointer-events-auto z-10 relative">
           <a href="#" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
           <a href="#" className="text-slate-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
         </div>
@@ -38,12 +50,17 @@ const ProjectCard = ({ title, description, tags, status }) => (
       </p>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-2 mt-auto">
+      <div className="flex flex-wrap gap-2 mt-auto mb-4">
         {tags.map((tag) => (
           <span key={tag} className="px-3 py-1 text-xs font-medium text-cyan-200 bg-cyan-900/30 rounded-full border border-cyan-800/50">
             {tag}
           </span>
         ))}
+      </div>
+
+       {/* View Case Study Button - purely visual now as the whole card is a link */}
+       <div className="text-center w-full py-2 mt-auto text-sm font-medium text-cyan-400 border border-cyan-900/50 rounded group-hover:bg-cyan-900/20 transition-colors">
+        View Case Study
       </div>
     </div>
   </div>
@@ -52,23 +69,19 @@ const ProjectCard = ({ title, description, tags, status }) => (
 const Projects = () => {
   const projects = [
     {
-      title: 'SecureVault API',
-      description: 'An enterprise-grade encryption service featuring zero-knowledge architecture and AES-256 standards. Built for high-compliance environments.',
-      tags: ['Node.js', 'Express', 'Cryptography', 'Docker'],
-      status: 'Live'
-    },
-    {
-      title: 'OptiTask Manager',
-      description: 'A privacy-first productivity dashboard that optimizes daily workflows without tracking user behavior. Sub-100ms load times.',
-      tags: ['React', 'TypeScript', 'Redux', 'Tailwind'],
+      id: 'beldepot', // Added ID for routing
+      title: 'BelDepot System',
+      description: 'A comprehensive booking and inventory management system developed for a beverage distribution company. Features real-time stock tracking, automated reorder alerts, and secure user authentication.',
+      tags: ['Python', 'FastApi', 'React Native', 'Docker'],
       status: 'In Dev'
     },
     {
-      title: 'NetGuard Monitor',
-      description: 'Real-time network traffic analysis tool detecting anomalies using lightweight ML models directly in the browser.',
-      tags: ['Python', 'TensorFlow.js', 'WebSocket', 'Vite'],
-      status: 'Prototype'
-    }
+      id: 'care-connect', // Added ID for routing
+      title: 'Care Connect',
+      description: 'A simple platform for managers to track worker rating get customer feedback and improve customer performance.',
+      tags: ['React', 'Tailwind', 'Node.js', 'PostgreSQL'],
+      status: 'In Dev'
+    }   
   ];
 
   return (
@@ -86,7 +99,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
