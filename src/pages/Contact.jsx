@@ -114,7 +114,7 @@ const Contact = () => {
                       name="name"
                       required
                       className="w-full bg-slate-900/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                      placeholder="John Doe"
+                      placeholder="Akosua Serwaa"
                       onChange={handleChange}
                     />
                   </div>
