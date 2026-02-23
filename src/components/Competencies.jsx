@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Zap, Code, Check } from 'lucide-react';
 
+
 const CompetencyCard = ({ icon: Icon, title, items, colorClass }) => (
   <div className="bg-dark-secondary p-8 rounded-xl border border-slate-700/50 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-cyan/10 group">
     <Icon className={`h-12 w-12 mb-6 ${colorClass} group-hover:scale-110 transition-transform duration-300`} strokeWidth={1.5} />
@@ -39,7 +40,7 @@ const Competencies = () => {
   ];
 
   return (
-    <section id="competencies" className="bg-dark-primary py-20 sm:py-32">
+    <section id="competencies" className="bg-dark-primary py-10 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold text-brand-cyan tracking-wider uppercase">Our Expertise</h2>
@@ -54,6 +55,7 @@ const Competencies = () => {
           ))}
         </div>
       </div>
+      
     </section>
   );
 };
