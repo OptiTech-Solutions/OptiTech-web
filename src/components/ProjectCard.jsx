@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, ExternalLink, Lock, Zap, Shield } from 'lucide-react';
 
-const ProjectCard = ({ title, description, tags, status }) => (
+const ProjectCard = ({ title, description, tags, status, githubLink, externalLink }) => (
   <div className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10 group flex flex-col h-full">
     {/* Project Preview / Placeholder */}
     <div className="h-48 bg-slate-900 relative overflow-hidden group">
@@ -27,8 +27,8 @@ const ProjectCard = ({ title, description, tags, status }) => (
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">{title}</h3>
         <div className="flex space-x-3">
-          <a href="#" className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
-          <a href="#" className="text-slate-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
+          <a href={github-link} className="text-slate-400 hover:text-white transition-colors"><Github size={20} /></a>
+          <a href={external-link} className="text-slate-400 hover:text-white transition-colors"><ExternalLink size={20} /></a>
         </div>
       </div>
       
