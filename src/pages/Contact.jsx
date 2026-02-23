@@ -58,8 +58,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-lg">Email Us</h3>  
-                  <a href="mailto:team@optitech.solutions" className="text-slate-400 hover:text-cyan-400 transition-colors block mt-1">
-                    team@optitech.solutions
+                  <a href="mailto:elik.amuzu@gmail.com" className="text-slate-400 hover:text-cyan-400 transition-colors block mt-1">
+                    elik.amuzu@gmail.com
                   </a>
                   <p className="text-slate-600 text-xs mt-1">We typically reply within 24 hours </p>
                 </div>
@@ -114,7 +114,7 @@ const Contact = () => {
                       name="name"
                       required
                       className="w-full bg-slate-900/50 border border-slate-600 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                      placeholder="John Doe"
+                      placeholder="Akosua Serwaa"
                       onChange={handleChange}
                     />
                   </div>
