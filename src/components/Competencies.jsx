@@ -40,7 +40,7 @@ const Competencies = () => {
   ];
 
   return (
-    <section id="competencies" className="bg-dark-primary py-10 sm:py-8">
+    <section id="competencies" className="bg-dark-primary py-10 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-base font-semibold text-brand-cyan tracking-wider uppercase">Core Services</h2>
