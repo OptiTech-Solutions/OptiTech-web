@@ -12,19 +12,43 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(''); // Add error state
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { // Make function async
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setErrorMessage(''); // Reset error
+
+    try {
+      const response = await fetch("https://formspree.io/f/xwvnybol", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', projectType: 'Web Development', budget: '', message: '' }); // Clear form
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          setErrorMessage(data["errors"].map(error => error["message"]).join(", "));
+        } else {
+          setErrorMessage("Oops! There was a problem submitting your form");
+        }
+      }
+    } catch (error) {
+      setErrorMessage("Networking error. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -155,10 +179,10 @@ const Contact = () => {
                     defaultValue=""
                   >
                     <option value="" disabled>Select a range</option>
-                    <option value="<1k">&lt; $1k</option>
-                    <option value="1k-5k">$1k - $5k</option>
-                    <option value="5k-10k">$5k - $10k</option>
-                    <option value="10k+">$10k+</option>
+                    <option value="<5000">&lt; 5000 cedis</option>
+                    <option value="5000-10000">5,000 - 10,000 cedis</option>
+                    <option value="10k-25k">10,000 - 25,000 cedis</option>
+                    <option value="25k+">25,000+ cedis</option>
                   </select>
                 </div>
 
